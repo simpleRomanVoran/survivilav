@@ -1,0 +1,380 @@
+/* 
+    Z-INDEX
+    HEADER - 2
+    PANEL - 2
+*/
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    outline: 0;
+    box-sizing: border-box;
+    font: 18px "Inter";
+    font-weight: 400;
+    text-decoration: none;
+    color: aliceblue;
+    /* overflow: auto; */
+}
+
+*::selection {
+    background-color: rgb(235, 214, 100);
+    color: rgb(14, 12, 12);
+}
+
+
+
+.body {
+    overflow: auto;
+    position: relative;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.page {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+
+.text {
+    font: 16px "Inter";
+}
+/* .text::selection, .high::selection {
+    background-color: rgb(235, 214, 100);
+    color: rgb(14, 12, 12);
+} */
+.heading {
+    font: 32px "Inter";
+    font-weight: 600;
+}
+.link {
+    color: rgb(86, 226, 184);
+    font: 18px "Inter";
+}
+
+
+
+/* Верхняя часть сайта */
+.top {
+    position: absolute;
+    top: 0;
+}
+/* Нижняя часть сайта */
+.bottom {
+    position: absolute;
+    bottom: 0;
+}
+/* Левая часть сайта */
+.left {
+    position: absolute;
+    left: 0;
+}
+/* Правая часть сайта */
+.right {
+    position: absolute;
+    right: 0;
+}
+/* Центрирует часть сайта */
+.center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+/* Центрирование простых объектов */
+.center_inline {
+    text-align: center;
+}
+/* Центрирование внутри блока */
+.center_section {
+    
+}
+
+
+/* Контентная часть сайта */
+.content {}
+
+/* Верхний передвижной элемент: header */
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    box-shadow: 8px 0px 8px rgba(10, 10, 10, 0.8);
+}
+/* Нижний неподвижный элемент */
+.footer {}
+
+/* Фиксированные элементы */
+.panel {
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+}
+
+
+
+.btn {
+    cursor: pointer;
+}
+.btn_header {
+    padding: 8px 16px 8px 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Статические стили */
+.bg-white {
+    background-color: aliceblue;
+}
+.bg-black {
+    background-color: rgb(14, 12, 12);
+}
+.bg-gray_0, .bg-gray {
+    background-color: rgb(25, 25, 26);
+}
+.bg-gray_1 {
+    background-color: rgb(31, 31, 32);
+}
+.bg-gray_2 {
+    background-color: rgb(51, 51, 53);
+}
+.bg-gray_3 {
+    background-color: rgb(65, 65, 66);
+}
+.bg-blue {
+    background-color: rgb(22, 88, 126);
+}
+
+.white {
+    color: aliceblue;
+}
+.black {
+    color: rgb(14, 12, 12);
+}
+.blue {
+    color: rgb(96, 96, 235);
+}
+.yellow {
+    color: rgb(231, 206, 61);
+}
+
+.bg-white {
+    background-color: aliceblue;
+}
+.bg-black {
+    background-color: rgb(14, 12, 12);
+}
+.bg-blue {
+    background-color: rgb(96, 96, 235);
+}
+.bg-yellow {
+    background-color: rgb(231, 206, 61);
+}
+
+.high {
+    background-color: rgb(231, 206, 61);
+    padding: 1px;
+    color: rgb(14, 12, 12);
+}
+.green {
+    color: rgb(130, 216, 50);
+}
+.red {
+    color: rgb(204, 61, 42);
+}
+
+/* Стили затемнения */
+.hover {
+    position: relative; /* Для позиционирования псевдоэлемента */
+    display: inline-block; /* Для корректного отображения */
+}
+
+.hover::after {
+    content: ""; /* Создаём пустой псевдоэлемент */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255); /* Чёрный слой */
+    opacity: 0; /* Изначально прозрачный */
+    transition: opacity 0.3s ease; /* Плавное затемнение */
+    pointer-events: none; /* Чтобы слой не мешал кликам */
+    z-index: 1; /* Помещаем слой над контентом */
+}
+
+.hover:hover::after {
+    opacity: 0.15; /* Затемнение при наведении */
+}
+
+.hover:active::after {
+    opacity: 0.35; /* Затемнение при наведении */
+}
+
+.hover-4::after {border-radius: 4px;}
+.hover-8::after {border-radius: 8px;}
+.hover-12::after {border-radius: 12px;}
+.hover-16::after {border-radius: 16px;}
+
+.m-0, .m-none {margin: 0;}
+.m-4 {margin: 4px;}
+.m-8 {margin: 8px;}
+.m-16 {margin: 16px;}
+.m-24 {margin: 24px;}
+.m-32 {margin: 32px;}
+
+.p-0, .p-none {padding: 0;}
+.p-2 {padding: 2px;}
+.p-4 {padding: 4px;}
+.p-8 {padding: 8px;}
+.p-16 {padding: 16px;}
+.p-24 {padding: 24px;}
+.p-32 {padding: 32px;}
+
+.ml-8 {margin-left: 8px;}
+.ml-16 {margin-left: 16px;}
+.ml-32 {margin-left: 32px;}
+
+.mr-8 {margin-right: 8px;}
+.mr-16 {margin-right: 16px;}
+.mr-32 {margin-right: 32px;}
+
+.mb-8 {margin-bottom: 8px;}
+.mb-12 {margin-bottom: 12px;}
+.mb-16 {margin-bottom: 16px;}
+.mb-24 {margin-bottom: 24px;}
+.mb-32 {margin-bottom: 32px;}
+
+.br-4 {border-radius: 4px;}
+.br-8 {border-radius: 8px;}
+.br-12 {border-radius: 12px;}
+.br-16 {border-radius: 16px;}
+.br-32 {border-radius: 32px;}
+
+.img {}
+.img-full {
+    width: 100%;
+    height: 100%;
+}
+.img-32 {
+    width: 32px;
+    height: 32px;
+}
+.img-48 {
+    width: 48px;
+    height: 48px;
+}
+
+.hr {
+    border: 1px solid aliceblue;
+    width: 100%;
+}
+.hr_black {
+    border: 1px solid rgb(23, 23, 24);
+    width: 100%;
+}
+/* vertical */
+.vertical-line {
+    display: inline-block;
+    position: relative;
+}
+.vertical-line::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: aliceblue;
+    width: 2px;
+    height: 100%;
+    margin-right: -16px;
+}
+
+/* Блоки */
+.block {
+    /* padding: 8px; */
+}
+
+.w-100x {
+    width: 100%;
+}
+
+.w-50x {
+    width: 50%;
+}
+
+.w-auto {
+    width: auto;
+}
+
+.h-100x {
+    height: 100%;
+}
+
+.h-50x {
+    height: 50%;
+}
+
+.h-auto {
+    height: auto;
+}
+
+.h-8r {
+    height: 8rem;
+}
+
+/* TEXT */
+.fz-8 {
+    font-size: 8px;
+}
+.fz-12 {
+    font-size: 12px;
+}
+.fz-16 {
+    font-size: 16px;
+}
+.fz-24 {
+    font-size: 24px;
+}
+.fz-28 {
+    font-size: 28px;
+}
+.fz-32 {
+    font-size: 32px;
+}
+.fz-48 {
+    font-size: 48px;
+}
+
+/* Позиционирование элементов контейнеров :: FLEX, GRID */
+.flex {display: flex;}
+.inline-flex {display: inline-flex;}
+.grid {display: grid;}
+.inline-grid {display: inline-grid;}
+.flex_center {justify-content: center;}
+.d-block {display: block;}
+.d-inline {display: inline;}
+.d-inline-block {display: inline-block;}
+
+.flex_wrap {
+    flex-wrap: wrap;
+}
+
+.jc-space-between {
+    justify-content: space-between;
+}
+
+
+/* Special Object */
+.so-center-80 {
+    position: absolute;
+    width: 80%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
